@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const message_1 = require("../controllers/message");
+const router = (0, express_1.Router)();
+router.get("/message/:conversationId", message_1.getMessagesInConversation);
+router.post('/message', message_1.postMessageToConversation);
+router.post('/conversation', message_1.createConversation);
+router.get('/conversation', message_1.getConversations);
+router.get('/conversation/:conversationId', message_1.getConversation);
+exports.default = router;
